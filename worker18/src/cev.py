@@ -14,8 +14,11 @@ dataset = pd.read_csv('../data/metal_concentration_results.csv')
 #drop the first column
 dataset.drop(dataset.iloc[:, 0:1], inplace=True, axis=1)
 
+rows = len(dataset)
+columns = len(dataset.columns)
+print(columns)
 
-X = dataset.iloc[:, 0:8].values
+X = dataset.iloc[:, 0:4].values
 y = dataset.iloc[:0]
 
 dataset = StandardScaler().fit_transform(dataset)
